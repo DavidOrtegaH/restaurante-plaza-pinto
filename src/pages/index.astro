@@ -69,9 +69,7 @@ const menuPages = [
       <div class="hero__visual">
         <div class="hero-photo-frame">
           <img class="hero-photo" src="/images/menu/hamburguesas.jpg" alt="Detalle de la carta de hamburguesas de Bar Plaza" fetchpriority="high" />
-          <span class="hero-photo__label">Hecho para disfrutar<br /><b>en buena compañía.</b></span>
         </div>
-        <span class="hero-stamp" aria-hidden="true"><span>DESDE</span><strong>PINTO</strong><span>CON CARIÑO</span></span>
         <span class="hero-spark hero-spark--one" aria-hidden="true">✳</span>
         <span class="hero-spark hero-spark--two" aria-hidden="true">✳</span>
       </div>
@@ -94,7 +92,7 @@ const menuPages = [
       </div>
 
       <div class="menu-grid">
-        {menuPages.map((page, index) => (
+        {menuPages.map((page) => (
           <button
             class={`menu-card ${page.className}`}
             type="button"
@@ -105,7 +103,6 @@ const menuPages = [
             <span class="menu-card__image-wrap">
               <img src={page.image} alt={page.alt} loading="lazy" />
               <span class="menu-card__zoom" aria-hidden="true">↗</span>
-              <span class="menu-card__index">0{index + 1}</span>
             </span>
             <span class="menu-card__body">
             <span><strong>{page.title}</strong><small>{page.description}</small></span>
