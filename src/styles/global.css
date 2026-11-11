@@ -86,6 +86,14 @@ h1, h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -.045em; }
 .menu-card__body strong { margin-bottom: 5px; font: 500 21px var(--serif); }
 .menu-card__body small { color: var(--muted); font-size: 10px; }
 .menu-card__arrow { padding-top: 3px; color: var(--olive); }
+.menu-recreation-note { margin: 28px 0; font-size: 12px; line-height: 1.7; }
+.menu-transcription { margin-top: 32px; max-width: 850px; }
+.menu-transcription h3 { font: 500 25px var(--serif); }
+.menu-transcription details { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.menu-transcription summary { cursor: pointer; font-weight: 600; }
+.menu-transcription ul { padding-left: 22px; }
+.menu-transcription li { margin: 12px 0; line-height: 1.6; }
+.menu-transcription > p { margin-top: 20px; line-height: 1.6; }
 .allergen-note { max-width: 555px; margin: 54px auto 0; display: flex; align-items: start; gap: 13px; color: var(--muted); }
 .allergen-note span { color: var(--orange); font-size: 17px; }
 .allergen-note p { margin: 0; font-size: 10px; line-height: 1.8; }

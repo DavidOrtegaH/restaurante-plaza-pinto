@@ -1,32 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import menuTranscription from '../../public/images/menu/transcription.json';
 
 const menuPages = [
   {
-    title: 'Raciones y sándwiches',
-    description: 'Patatas, mariscos, raciones variadas, tostas y sándwiches.',
-    image: '/images/menu/raciones-y-sandwiches.jpg',
-    alt: 'Carta de raciones, mariscos y sándwiches de Bar Plaza',
+    title: 'Raciones',
+    description: 'Patatas, mariscos y raciones variadas.',
+    image: '/images/menu/raciones.png',
+    alt: 'Carta recreada de patatas, mariscos y raciones de Bar Plaza',
     className: 'menu-card--wide',
+  },
+  {
+    title: 'Tostas y sándwiches',
+    description: 'Ocho tostas y cinco sándwiches.',
+    image: '/images/menu/tostas-y-sandwiches.png',
+    alt: 'Carta recreada de tostas y sándwiches de Bar Plaza',
+    className: '',
   },
   {
     title: 'Ensaladas y platos',
     description: 'Ensaladas y platos combinados.',
-    image: '/images/menu/ensaladas-y-platos.jpg',
+    image: '/images/menu/ensaladas-y-platos.png',
     alt: 'Carta de ensaladas y platos combinados de Bar Plaza',
     className: '',
   },
   {
     title: 'Hamburguesas',
     description: 'Ocho hamburguesas con distintos ingredientes.',
-    image: '/images/menu/hamburguesas.jpg',
+    image: '/images/menu/hamburguesas.png',
     alt: 'Carta de hamburguesas de Bar Plaza',
     className: '',
   },
   {
     title: 'Bocadillos y postres',
     description: 'Bocadillos, complementos y postres.',
-    image: '/images/menu/bocadillos-y-postres.jpg',
+    image: '/images/menu/bocadillos-y-postres.png',
     alt: 'Carta de bocadillos y postres de Bar Plaza',
     className: '',
   },
@@ -68,7 +76,7 @@ const menuPages = [
       </div>
       <div class="hero__visual">
         <div class="hero-photo-frame">
-          <img class="hero-photo" src="/images/menu/hamburguesas.jpg" alt="Detalle de la carta de hamburguesas de Bar Plaza" fetchpriority="high" />
+          <img class="hero-photo" src="/images/menu/hamburguesas.png" alt="Carta recreada de hamburguesas de Bar Plaza" fetchpriority="high" />
         </div>
         <span class="hero-spark hero-spark--one" aria-hidden="true">✳</span>
         <span class="hero-spark hero-spark--two" aria-hidden="true">✳</span>
@@ -110,6 +118,20 @@ const menuPages = [
             </span>
           </button>
         ))}
+      </div>
+
+      <p class="menu-recreation-note">Carta recreada digitalmente a partir del menú físico. Las imágenes de comida son ilustrativas. Diseño original y contenido de la carta: sus respectivos titulares.</p>
+      <div class="menu-transcription">
+        <h3>Consultar la carta en texto</h3>
+        {menuTranscription.pages.map((page, index) => (
+          <details>
+            <summary>{menuPages[index].title}</summary>
+            <ul>
+              {page.text.split('\n').map((line) => <li>{line.replace('Columns: Bocadillo | Montado', 'Precios: bocadillo | montado')}</li>)}
+            </ul>
+          </details>
+        ))}
+        <p>Suplemento de terraza: +8 %. Consulta los alérgenos en el establecimiento.</p>
       </div>
 
       <div class="allergen-note"><span aria-hidden="true">✳</span><p>Si tienes alguna alergia o intolerancia, consúltanos antes de pedir. La información completa de alérgenos aparece en la carta del establecimiento.</p></div>

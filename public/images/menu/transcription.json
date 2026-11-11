@@ -1,0 +1,37 @@
+{
+  "source": "Restaurant-provided photographs in assets/menu-originals; source menu rights belong to their holders. AI recreation is illustrative.",
+  "generator": "Built-in image_gen",
+  "pagePromptSuffixes": {
+    "hamburguesas": "Use the original orange burger-bun graphic around title, and a large appetizing burger below list, WITHOUT a hand holding it. Only Spanish text; optional brand header BAR PLAZA.",
+    "bocadillos-y-postres": "For this page match green olive background in the bocadillos panel, cream white lettering and ornamental cream border; cream panel for POSTRES. Price columns Bocadillo and Montado must be distinct and precisely aligned. Include both sandwich cutouts, small line illustrations of supplements and cheesecake image. Only Spanish text; optional brand header BAR PLAZA."
+  },
+  "ensaladasRevisionPrompt": "Precise text edit of this recreated menu page. Change ONLY the top brand header from 'SPANISH BAR Plaza' to 'BAR PLAZA' in olive green, matching the other menu pages. Preserve every other pixel of the layout as closely as possible: all 12 dishes, every ingredient description, all prices, food images, cream background and green borders. Do not add or remove anything else. No English text.",
+  "commonPrompt": "Create a polished, perfectly flat digital restaurant menu page, portrait, high resolution. Reference image is STYLE AND FOOD PHOTO REFERENCE only. Recreate the physical Spanish Bar Plaza menu's cream paper, olive green lines, heavy uppercase outlined headings, green script subheadings, dark sans-serif body, bold right-aligned euro prices and appetizing small photographic food cutouts. No hands, fingers, table, glare, perspective, folds, shadows, damage or cropped text. Full page with generous safe margins. Preserve every item and price from the EXACT TRANSCRIPTION below, with precise Spanish accents. Do not add dishes or ingredients. Use food cutouts matching the reference. Do not invent per-dish allergen symbols; add only footer 'Consulta los alérgenos en el establecimiento. SUPLEMENTO DE TERRAZA +8%'. ",
+  "pages": [
+    {
+      "key": "raciones",
+      "source": "raciones-y-sandwiches.jpeg",
+      "text": "RACIONES\nPatatas\nPatatas Bravas/Aliolis/Braviolis — 7,00€\nSalchipapas — 7,50€\nNuggets — 7,50€\nPatatas con bacon y cheddar — 8,90€\nHuevos rotos con jamón — 9,90€\nHuevos rotos con bacon — 9,90€\nMariscos\nBoquerones — 8,90€\nSepia a la plancha — 13,95€\nCalamares a la andaluza — 11,50€\nRejos — 11,50€\nBienmesabe cazón — 11,50€\nChopitos — 11,55€\nGambón a la plancha — 14,50€\nGulas al ajillo — 8,95€\nGulas al ajillo con gambas — 9,95€\nGambas al ajillo — 10,50€\nFamilia de mariscos (rejos, chopitos, cazón, calamares, boquerones) — 15,95€\nVariados\nGyozas (8 unidades) — 8,50€\nMini rollitos (8 unidades) — 5,50€\nAlitas de pollo — 8,95€\nChorizos a la sidra — 8,95€\nOreja a la plancha — 9,95€\nTiras de pollo — 8,95€\nLacón a la gallega — 10,50€\nCroquetas de jamón — 9,50€"
+    },
+    {
+      "key": "tostas-y-sandwiches",
+      "source": "raciones-y-sandwiches-detail.jpeg",
+      "text": "TOSTAS\nTosta del mar (gulas y gambas acompañadas) — 5,95€\nAtún con pimientos — 4,95€\nAnchoas y boquerones — 5,95€\nQueso brie con cebolla caramelizada — 4,95€\nJamón con tumaca — 4,95€\nTosta de queso de cabra (con confitura de fresa y cebolla caramelizada) — 5,95€\nCuatro quesos con bacon a la plancha — 4,95€\nTosta de solomillo de cerdo (con queso brie y cebolla caramelizada) — 6,95€\nSANDWICHES\nSandwich mixto (jamón york, queso) — 4,10€\nSandwich vegetal (lechuga, tomate, atún, huevo, mayonesa) — 4,80€\nSandwich Inglés (jamón york, queso, bacon, huevo frito) — 5,80€\nPechuga de pollo (pechuga de pollo, lechuga, tomate, queso) — 6,55€\nSandwich plaza (jamón york, queso, lechuga, tomate, pechuga de pollo empanado, bacon) — 8,55€"
+    },
+    {
+      "key": "ensaladas-y-platos",
+      "source": "ensaladas-y-platos-combinados.jpeg",
+      "text": "ENSALADAS\nEnsalada mixta (lechuga, tomate, cebolla, huevo, espárragos, atún) — 7,95€\nEnsalada César (lechuga, tomate, bacon, pollo y salsa César) — 8,50€\nEnsalada de la casa (lechuga, tomate, cebolla caramelizada, huevo, espárragos, atún, aceitunas y maíz) — 8,95€\nPLATOS COMBINADOS\nMilanesa de pollo (acompañado de ensalada, huevo frito y patatas) — 9,50€\nFilete de pollo (acompañado de ensalada, huevo frito y patatas) — 8,95€\nMilanesa de ternera (acompañado de ensalada, huevo frito y patatas) — 9,95€\nFilete de ternera (acompañado de ensalada y patatas) — 9,50€\nBienmesabe cazón (acompañado de ensalada y patatas) — 8,95€\nCalamares a la andaluza (acompañado de ensalada y patatas) — 9,50€\nEntrecot de buey (acompañado de ensalada, huevo frito y patatas) — 16,50€\nChurrasco de ternera (acompañado de ensalada, huevo frito y patatas) — 13,50€\nCinta de lomo (acompañado de ensalada, huevo frito y patatas) — 9,50€"
+    },
+    {
+      "key": "hamburguesas",
+      "source": "bocadillos-y-postres.jpeg",
+      "text": "HAMBURGUESAS\nHamburguesa A (carne, lechuga, tomate y patatas) — 4,80€\nHamburguesa B (carne, lechuga, tomate, queso cheddar, bacon y patatas) — 6,25€\nHamburguesa C (carne, lechuga, tomate, queso cheddar, bacon, huevo y patatas) — 7,25€\nHamburguesa de pollo (pollo empanado, lechuga, tomate y patatas) — 6,50€\nHamburguesa de pollo especial (pollo empanado, lechuga, tomate, bacon, queso y patatas) — 7,80€\nHamburguesa D (doble carne, doble de bacon, doble queso, jamón york, huevo) — 11,50€\nHamburguesa de buey (carne de buey, lechuga, tomate, queso cheddar y doble bacon) — 11,50€\nHamburguesa de queso cabra (carne de buey, lechuga, tomate, queso de cabra, cebolla caramelizada) — 12,00€"
+    },
+    {
+      "key": "bocadillos-y-postres",
+      "source": "hamburguesas.jpeg",
+      "text": "BOCADILLOS\nColumns: Bocadillo | Montado\nOreja — 6,00€ | 3,80€\nCalamares — 6,00€ | 3,80€\nJamón con tumaca — 5,50€ | 3,50€\nPollo con mayonesa — 6,00€ | 3,80€\nLomo — 5,50€ | 3,50€\nBacon — 5,50€ | 3,50€\nPanceta — 6,50€ | 4,30€\nTortilla de patata — 5,50€ | 3,50€\nTortilla francesa — 5,50€ | 3,50€\nBoquerones en vinagre — 6,50€ | 4,30€\nSuplementos\nQueso — 0,50€\nPimiento — 0,50€\nTomate — 0,50€\nLechuga — 0,50€\nPOSTRES\nTarta de queso — 4,50€\nBrownie de chocolate — 3,50€\nBolas de helado — 2,50€\nProfiteroles — 2,80€"
+    }
+  ]
+}

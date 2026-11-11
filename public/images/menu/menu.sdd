@@ -1,0 +1,23 @@
+Spec: Recreated Restaurant Menu
+
+Purpose:
+  Provide legible digital menu pages faithful to the restaurant's photographed menu.
+
+Owns:
+  ./*.png: Recreated menu page images
+  ./transcription.json: Source transcription and exact image generation prompts
+
+Can read:
+  /assets/menu-originals: Restaurant-provided menu photographs
+
+Must:
+  Every source dish, ingredient description and price is retained on its corresponding page.
+  Pages preserve the cream and olive palette, prominent headings and food imagery of the physical menu.
+  Pages are flat, evenly lit and contain no photographed fingers, table background or cast shadows.
+  Generated text is visually compared against the transcription before integration.
+  Source photographs remain the authority for menu content; unclear information is flagged rather than invented.
+  Recreated food imagery is illustrative and retains the rights attribution of the source menu.
+
+Done when:
+  All five menu pages are available locally and referenced by the website.
+  Production build succeeds.
