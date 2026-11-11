@@ -1,0 +1,20 @@
+Spec: Restaurant Landing Page
+
+Purpose:
+  Help visitors browse Bar Plaza's menu and find its contact details.
+
+Owns:
+  ./index.astro
+
+Must:
+  The page uses one main landmark, a logical heading order, and named navigation landmarks.
+  Every meaningful image has descriptive alternative text.
+  Menu pages can be opened and dismissed with native keyboard-accessible dialog behavior.
+  Phone and address are actionable contact information.
+  Unconfirmed opening hours are not stated as fact.
+
+Must not:
+  Embed photos from third-party directories or claim menu photographs depict the restaurant interior.
+
+Done when:
+  The built page contains semantic landmarks and the contact actions remain usable without JavaScript.

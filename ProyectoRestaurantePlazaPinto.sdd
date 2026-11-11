@@ -1,0 +1,24 @@
+Spec: Bar Plaza Website
+
+Purpose:
+  Present Bar Plaza in Pinto with an accessible menu and reliable contact details.
+
+Structure:
+  ./src: Astro page, layout, styles, and browser interactions
+  ./public: Static assets and hosting response headers
+  ./netlify.toml: Netlify build and publish settings
+  ./README.md: Local development and deployment instructions
+
+Must:
+  The site is a static Astro website that can be hosted on a free commercial-use plan.
+  The contact address and phone match the restaurant-provided menu.
+  Menu images remain attributed to their rights holders and are excluded from the project code license.
+  Locally available content works without paid services or third-party runtime dependencies.
+  User-facing pages use Spanish-language semantic HTML and support keyboard access.
+
+Must not:
+  Publish unverified business hours or third-party restaurant photos without confirmed reuse rights and a recent date.
+  Include secrets, server-side credentials, or paid-service requirements.
+
+Done when:
+  npm run build completes and the README documents the local development command and URL.

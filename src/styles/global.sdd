@@ -1,0 +1,16 @@
+Spec: Global Website Styles
+
+Purpose:
+  Provide the responsive visual system and visible interaction states for the website.
+
+Owns:
+  ./global.css
+
+Must:
+  Layouts remain usable at narrow viewport widths without horizontal page overflow.
+  Keyboard focus is visible on interactive controls.
+  Motion-sensitive users can request reduced motion.
+  Text and controls maintain readable contrast against their backgrounds.
+
+Done when:
+  Focus and reduced-motion styles are present and the layout has a narrow-screen breakpoint.

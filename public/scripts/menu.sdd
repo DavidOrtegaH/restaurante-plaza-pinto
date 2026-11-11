@@ -1,0 +1,15 @@
+Spec: Menu Image Dialog
+
+Purpose:
+  Let visitors inspect a menu page at a larger size.
+
+Owns:
+  ./menu.js
+
+Must:
+  Menu buttons open the native dialog with the selected image and an informative accessible name.
+  The close button, Escape key, and clicking the backdrop dismiss the dialog.
+  Image URLs are taken only from the page's local menu data.
+
+Done when:
+  Menu interaction uses native dialog methods and does not inject markup from user-controlled strings.
