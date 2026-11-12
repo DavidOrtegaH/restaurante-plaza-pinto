@@ -12,6 +12,7 @@ if (dialog instanceof HTMLDialogElement && image instanceof HTMLImageElement && 
   let zoom = 1;
   let fittedWidth = 0;
   let opener;
+  let pixelRatio = window.devicePixelRatio;
 
   const applyZoom = () => {
     image.width = Math.round(fittedWidth * zoom);
@@ -65,5 +66,13 @@ if (dialog instanceof HTMLDialogElement && image instanceof HTMLImageElement && 
     image.removeAttribute('width');
     opener?.focus();
   });
-  window.addEventListener('resize', fit);
+  window.addEventListener('resize', () => {
+    // Browser zoom already scales the image; refitting would cancel that change.
+    const nextRatio = window.devicePixelRatio;
+    if (nextRatio !== pixelRatio) {
+      pixelRatio = nextRatio;
+      return;
+    }
+    fit();
+  });
 }
