@@ -6,6 +6,13 @@ import { getSiteConfig } from '../src/config/site.mjs';
 const data = JSON.parse(readFileSync(new URL('../src/data/menu.json', import.meta.url), 'utf8'));
 const source = JSON.parse(readFileSync(new URL('../assets/menu-generation.json', import.meta.url), 'utf8'));
 
+test('menu artwork matches the uniform 2:3 card format without letterboxing', () => {
+  for (const page of data) {
+    const image = readFileSync(new URL(`../src/assets/menu/${page.id}.png`, import.meta.url));
+    assert.equal(image.readUInt32BE(16) / image.readUInt32BE(20), 2 / 3, page.id);
+  }
+});
+
 test('all source dishes, descriptions and prices survive the structured migration', () => {
   assert.equal(data.length, 5);
   assert.equal(new Set(data.map(page => page.id)).size, 5);
