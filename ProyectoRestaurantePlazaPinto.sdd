@@ -9,6 +9,13 @@ Structure:
   ./netlify.toml: Netlify build and publish settings
   ./README.md: Local development and deployment instructions
 
+Release contract:
+  Version 1.0.0 is published from the verified commit on main, develop, features, and release.
+  The annotated v1.0.0 tag and GitHub release identify that same commit.
+  package.json, package-lock.json, CHANGELOG.md, and .github/workflows/ci.yml carry release metadata and checks.
+  Production hosting uses Netlify Free with its HTTPS netlify.app address and no paid add-ons.
+  Public production builds use the actual hosting origin for SEO; credentials stay outside Git.
+
 Must:
   The site is a static Astro website that can be hosted on a free commercial-use plan.
   The contact address and phone match the restaurant-provided menu.

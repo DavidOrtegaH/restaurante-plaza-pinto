@@ -41,6 +41,17 @@ Astro guarda el resultado estático en `dist/`.
 
 El sitio genera canonical, Open Graph, una imagen social, datos estructurados de restaurante, `robots.txt` y `sitemap.xml`. Los deploy previews y los builds sin una URL pública quedan con `noindex`; no se inventa una dirección de producción. Los horarios y reseñas no se añaden a los datos estructurados sin confirmar.
 
+La URL de producción es https://restaurante-plaza-pinto.netlify.app. El proyecto se aloja en el equipo Free `davidortegah`, sin dominio propio. La primera publicación se realiza mediante Netlify CLI; un push a GitHub por sí solo no publica cambios hasta configurar la integración Git en Netlify.
+
+Para publicar de nuevo desde un checkout limpio y verificado de `main`, con Netlify CLI instalada y autorizada:
+
+```sh
+netlify link --name restaurante-plaza-pinto
+netlify deploy --prod --context production
+```
+
+La CLI ejecuta el build y obtiene la URL del sitio vinculado. Comprueba después el canonical, `robots.txt` y `sitemap.xml` en la URL pública. No publiques una carpeta `dist` generada sin el contexto de producción.
+
 ## Validación
 
 ```sh
@@ -52,7 +63,7 @@ npm run verify
 
 `verify` ejecuta tipos, contratos de datos, build y pruebas de navegador. Las pruebas sirven la build con la CSP y el resto de cabeceras de Netlify, y revisan teclado, carga fallida, zoom, alternativas sin JavaScript y accesibilidad automática en 320 y 1280 px. Si tienes Edge instalado y prefieres usarlo localmente, define `PLAYWRIGHT_EXECUTABLE_PATH` con la ruta a su ejecutable.
 
-Para revisar manualmente las cabeceras de producción: `npm run build` y `npm run serve:production`; abre `http://127.0.0.1:4323`. `npm run preview` no reproduce esas cabeceras. GitHub Actions ejecuta las comprobaciones automáticamente en las tres ramas y en los pull requests.
+Para revisar manualmente las cabeceras de producción: `npm run build` y `npm run serve:production`; abre `http://127.0.0.1:4323`. `npm run preview` no reproduce esas cabeceras. GitHub Actions ejecuta las comprobaciones automáticamente en `main`, `develop`, `features`, `release`, las etiquetas `v*` y los pull requests.
 
 El plan Free admite proyectos comerciales con un límite mensual de créditos; al agotarse, las publicaciones se pausan hasta el siguiente ciclo y no se recarga automáticamente. Confirma el límite vigente en Netlify antes de lanzar.
 
@@ -69,7 +80,7 @@ El plan Free admite proyectos comerciales con un límite mensual de créditos; a
 
 ## Publicación del repositorio
 
-La rama de producción es `main`, la de integración es `develop` y el desarrollo se realiza en `features`. Los mensajes siguen Conventional Commits en inglés.
+La rama de producción es `main`, la de integración es `develop` y el desarrollo se realiza en `features`. La rama `release` y la etiqueta `v1.0.0` identifican la primera versión estable. Los mensajes siguen Conventional Commits en inglés.
 
 Los archivos de entorno, dependencias, resultados de compilación, cachés, claves privadas y duplicados locales de `pictures/` se excluyen mediante `.gitignore`. Antes de publicar cambios, revisa los archivos preparados y el historial para evitar incluir credenciales o datos privados. El repositorio no requiere secretos para compilar.
 
