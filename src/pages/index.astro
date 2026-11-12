@@ -1,41 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import menuTranscription from '../../public/images/menu/transcription.json';
+import { getImage } from 'astro:assets';
+import { menuPages as sourcePages, formatPrice } from '../data/menu';
 
-const menuPages = [
-  {
-    title: 'Raciones',
-    image: '/images/menu/raciones.png',
-    alt: 'Carta recreada de patatas, mariscos y raciones de Bar Plaza',
-  },
-  {
-    title: 'Tostas y sándwiches',
-    image: '/images/menu/tostas-y-sandwiches.png',
-    alt: 'Carta recreada de tostas y sándwiches de Bar Plaza',
-  },
-  {
-    title: 'Ensaladas y platos',
-    image: '/images/menu/ensaladas-y-platos.png',
-    alt: 'Carta de ensaladas y platos combinados de Bar Plaza',
-  },
-  {
-    title: 'Hamburguesas',
-    image: '/images/menu/hamburguesas.png',
-    alt: 'Carta de hamburguesas de Bar Plaza',
-  },
-  {
-    title: 'Bocadillos y postres',
-    image: '/images/menu/bocadillos-y-postres.png',
-    alt: 'Carta de bocadillos y postres de Bar Plaza',
-  },
-];
+const menuPages = await Promise.all(sourcePages.map(async (page) => {
+  const widths = [320, 480, 640, 960];
+  const thumbnails = await Promise.all(widths.map(width => getImage({ src: page.image, width, format: 'webp', quality: 85 })));
+  const reading = await getImage({ src: page.image, format: 'webp', quality: 92 });
+  return { ...page, thumbnail: thumbnails[1].src, srcset: thumbnails.map((image, index) => image.src + ' ' + widths[index] + 'w').join(', '), reading: reading.src };
+}));
 ---
 
 <BaseLayout>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <a class="brand" href="#carta" aria-label="Bar Plaza, ir al inicio">
-      <span class="brand__mark" aria-hidden="true">P</span>
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 36 44" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M3 4h18c7 0 11 4 11 10s-4 10-11 10h-6v12h5v3H3v-3h5V7H3V4zm12 3v14h5c5 0 6-3 6-7s-1-7-6-7h-5z" /></svg></span>
       <span class="brand__name">BAR <strong>PLAZA</strong></span>
     </a>
     <nav class="main-nav" aria-label="Navegación principal">
@@ -52,41 +32,55 @@ const menuPages = [
     <section class="menu-section section-pad" id="carta" aria-labelledby="menu-title">
       <div class="section-heading">
         <div>
-          <h1 id="menu-title">La carta<span class="period">.</span></h1>
+          <h1 id="menu-title">La carta<span class="sr-only"> de Bar Plaza en Pinto</span><span class="period" aria-hidden="true">.</span></h1>
         </div>
         <p>Un vistazo a nuestra carta. Toca cualquier página para ampliarla y consultar los platos y precios.</p>
       </div>
 
       <div class="menu-grid">
-        {menuPages.map((page) => (
-          <button
+        {menuPages.map((page, index) => (
+          <a
             class="menu-card"
-            type="button"
-            data-menu-image={page.image}
+            href={page.reading}
+            data-menu-id={page.id}
+            data-menu-image={page.reading}
             data-menu-title={page.title}
             aria-label={`Ampliar carta: ${page.title}`}
           >
             <span class="menu-card__image-wrap">
-              <img src={page.image} alt={page.alt} loading="lazy" />
+              <img src={page.thumbnail} srcset={page.srcset} sizes="(max-width: 680px) 86vw, (max-width: 1280px) 40vw, 480px" width={page.image.width} height={page.image.height} alt={page.alt} loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} decoding="async" />
               <span class="menu-card__zoom" aria-hidden="true">↗</span>
             </span>
             <span class="menu-card__body">
               <strong>{page.title}</strong>
               <span class="menu-card__arrow" aria-hidden="true">↗</span>
             </span>
-          </button>
+          </a>
         ))}
       </div>
 
       <p class="menu-recreation-note">Carta recreada digitalmente a partir del menú físico. Las imágenes de comida son ilustrativas. Diseño original y contenido de la carta: sus respectivos titulares.</p>
       <div class="menu-transcription">
         <h2>Consultar la carta en texto</h2>
-        {menuTranscription.pages.map((page, index) => (
-          <details>
-            <summary>{menuPages[index].title}</summary>
-            <ul>
-              {page.text.split('\n').map((line) => <li>{line.replace('Columns: Bocadillo | Montado', 'Precios: bocadillo | montado')}</li>)}
-            </ul>
+        {menuPages.map((page) => (
+          <details id={`texto-${page.id}`}>
+            <summary>{page.title}</summary>
+            {page.groups.map(group => (
+              <div class="menu-text-group">
+                <h3>{group.title}</h3>
+                {group.items.some(item => item.montadoPrice !== undefined) ? (
+                  <table>
+                    <caption class="sr-only">Precios de {group.title.toLowerCase()}</caption>
+                    <thead><tr><th scope="col">Bocadillo</th><th scope="col">Precio</th><th scope="col">Montado</th></tr></thead>
+                    <tbody>{group.items.map(item => <tr><th scope="row">{item.name}</th><td>{formatPrice(item.price)}</td><td>{item.montadoPrice !== undefined ? formatPrice(item.montadoPrice) : '—'}</td></tr>)}</tbody>
+                  </table>
+                ) : (
+                  <ul>{group.items.map(item => (
+                    <li><span><strong>{item.name}</strong>{item.description && <span class="menu-item-description">{item.description}</span>}</span><span class="menu-item-price">{formatPrice(item.price)}</span></li>
+                  ))}</ul>
+                )}
+              </div>
+            ))}
           </details>
         ))}
         <p>Suplemento de terraza: +8 %. Consulta los alérgenos en el establecimiento.</p>
@@ -125,7 +119,7 @@ const menuPages = [
 
   <footer class="site-footer">
     <a class="brand brand--footer" href="#carta" aria-label="Bar Plaza, ir al inicio">
-      <span class="brand__mark" aria-hidden="true">P</span>
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 36 44" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M3 4h18c7 0 11 4 11 10s-4 10-11 10h-6v12h5v3H3v-3h5V7H3V4zm12 3v14h5c5 0 6-3 6-7s-1-7-6-7h-5z" /></svg></span>
       <span class="brand__name">BAR <strong>PLAZA</strong></span>
     </a>
     <p>Un bar de barrio en Pinto, Comunidad de Madrid.</p>
@@ -138,16 +132,17 @@ const menuPages = [
       <p class="menu-dialog__title" id="dialog-title">Carta <span aria-hidden="true">/</span> <span data-dialog-heading></span></p>
       <button class="menu-dialog__close" type="button" aria-label="Cerrar carta ampliada">Cerrar <span aria-hidden="true">×</span></button>
     </div>
-    <div class="menu-dialog__tools" aria-label="Controles de ampliación">
+    <div class="menu-dialog__tools" role="group" aria-label="Controles de ampliación">
       <button type="button" data-zoom-out aria-label="Reducir carta">−</button>
       <output data-zoom-level aria-live="polite">100 %</output>
       <button type="button" data-zoom-in aria-label="Ampliar carta">+</button>
       <button type="button" data-zoom-reset>Ajustar</button>
     </div>
-    <div class="menu-dialog__image-wrap"><img data-dialog-image alt="" /></div>
+    <div class="menu-dialog__image-wrap" tabindex="0" role="region" aria-label="Imagen ampliada de la carta" aria-busy="false"><p data-image-status role="status" aria-live="polite"></p><img data-dialog-image alt="" hidden /></div>
+    <a class="menu-dialog__fallback" data-image-fallback href="#texto-raciones">Consultar esta carta en texto</a>
     <p class="menu-dialog__hint">Usa + y − para ampliar o reducir. Desplázate por la carta ampliada. Pulsa Escape para cerrar.</p>
   </dialog>
   <script>
-    import '../../public/scripts/menu.js';
+    import '../scripts/menu';
   </script>
 </BaseLayout>

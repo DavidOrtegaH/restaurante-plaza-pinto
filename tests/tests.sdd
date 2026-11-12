@@ -1,0 +1,14 @@
+Spec: Website Verification
+
+Purpose:
+  Prevent regressions in menu integrity, accessibility, production security and indexing.
+
+Owns:
+  ./contracts.test.mjs
+  ./browser/site.spec.mjs
+
+Must:
+  Browser checks run against the production build with its security response headers applied.
+  Checks cover keyboard focus, image failures, text alternatives and automated WCAG rules at mobile and desktop widths.
+  Source-preservation tests compare every dish and price with the archived transcription.
+  Indexing tests distinguish production from preview and unconfigured origins.

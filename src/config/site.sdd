@@ -1,0 +1,12 @@
+Spec: Public Site Identity
+
+Purpose:
+  Provide a verified deployment origin for canonical URLs and indexing controls.
+
+Owns:
+  ./site.mjs
+
+Must:
+  The origin comes from `SITE_URL` or Netlify's `URL` and is never invented.
+  Configured origins use HTTPS and contain no credentials, path, query or fragment.
+  Builds without a public origin and non-production deploy contexts are not indexable.

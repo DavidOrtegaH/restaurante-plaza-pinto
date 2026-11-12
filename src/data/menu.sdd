@@ -1,0 +1,20 @@
+Spec: Menu Data
+
+Purpose:
+  Keep dishes, descriptions, prices and their category-to-image association consistent.
+
+Owns:
+  ./menu.json
+  ./menu.ts
+
+References:
+  /src/assets/menu/menu.sdd
+
+Must:
+  Category IDs are unique and each resolves to an existing image.
+  Prices are non-negative integer euro cents.
+  Original dish descriptions and both bocadillo and montado prices are preserved.
+  Image captions and text sections derive from the same category objects.
+
+Done when:
+  Data validation and source-preservation tests pass.

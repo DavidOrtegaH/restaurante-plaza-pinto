@@ -5,10 +5,11 @@ Purpose:
 
 Owns:
   ./*.png: Recreated menu page images
-  ./transcription.json: Source transcription and exact image generation prompts
 
 Can read:
   /assets/menu-originals: Restaurant-provided menu photographs
+  /assets/menu-generation.json: Transcription and generation provenance
+  /src/data/menu.json: Structured source of dishes and prices
 
 Must:
   Every source dish, ingredient description and price is retained on its corresponding page.
@@ -19,5 +20,5 @@ Must:
   Recreated food imagery is illustrative and retains the rights attribution of the source menu.
 
 Done when:
-  All five menu pages are available locally and referenced by the website.
+  All five source pages are available locally and the website serves optimized derivatives without distortion.
   Production build succeeds.

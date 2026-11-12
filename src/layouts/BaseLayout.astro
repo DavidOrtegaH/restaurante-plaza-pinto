@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import socialPreview from '../assets/social-preview.png';
+import { getSiteConfig } from '../config/site.mjs';
 
 interface Props {
   title?: string;
@@ -7,9 +10,29 @@ interface Props {
 }
 
 const {
-  title = 'Bar Plaza | Bar cafetería en Pinto',
-  description = 'Descubre Bar Plaza en Pinto: carta de tapas, raciones, bocadillos y hamburguesas. Consulta nuestra carta y encuentra cómo llegar.',
+  title = 'Bar Plaza en Pinto | Carta y contacto',
+  description = 'Consulta la carta de Bar Plaza en Pinto: raciones, tostas, hamburguesas y bocadillos. Encuentra la dirección, el teléfono y el enlace para pedir en Uber Eats.',
 } = Astro.props;
+const { site, indexable: production } = getSiteConfig();
+const indexable = production && !import.meta.env.DEV;
+const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
+const preview = await getImage({ src: socialPreview, format: 'png' });
+const previewUrl = site ? new URL(preview.src, site).href : undefined;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: 'Bar Plaza',
+  description,
+  telephone: '+34919414666',
+  address: {
+    '@type': 'PostalAddress', streetAddress: 'Calle Joan Miró, 5',
+    addressLocality: 'Pinto', addressRegion: 'Comunidad de Madrid',
+    postalCode: '28320', addressCountry: 'ES',
+  },
+  hasMap: 'https://www.google.com/maps/place//data=!4m2!3m1!1s0xd421f7746265553:0x62a183287a7c8f9e',
+  ...(canonical ? { '@id': canonical + '#restaurante', url: canonical, hasMenu: canonical + '#carta', image: previewUrl } : {}),
+};
+const serializedData = JSON.stringify(structuredData).replaceAll('<', '\\u003c');
 ---
 
 <!doctype html>
@@ -19,9 +42,26 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f4f0e4" />
     <meta name="description" content={description} />
+    <meta name="robots" content={indexable ? 'index,follow,max-image-preview:large' : 'noindex,nofollow'} />
+    {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Bar Plaza · Pinto" />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {previewUrl && <>
+      <meta property="og:image" content={previewUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Bar Plaza en Pinto: carta, dirección y contacto" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content={previewUrl} />
+      <meta name="twitter:image:alt" content="Bar Plaza en Pinto: carta, dirección y contacto" />
+    </>}
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <script type="application/ld+json" is:inline set:html={serializedData} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>

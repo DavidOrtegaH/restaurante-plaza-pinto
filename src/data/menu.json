@@ -1,0 +1,437 @@
+[
+  {
+    "id": "raciones",
+    "title": "Raciones",
+    "alt": "Carta de raciones de Bar Plaza en Pinto",
+    "groups": [
+      {
+        "title": "Patatas",
+        "items": [
+          {
+            "name": "Patatas Bravas/Aliolis/Braviolis",
+            "price": 700
+          },
+          {
+            "name": "Salchipapas",
+            "price": 750
+          },
+          {
+            "name": "Nuggets",
+            "price": 750
+          },
+          {
+            "name": "Patatas con bacon y cheddar",
+            "price": 890
+          },
+          {
+            "name": "Huevos rotos con jamón",
+            "price": 990
+          },
+          {
+            "name": "Huevos rotos con bacon",
+            "price": 990
+          }
+        ]
+      },
+      {
+        "title": "Mariscos",
+        "items": [
+          {
+            "name": "Boquerones",
+            "price": 890
+          },
+          {
+            "name": "Sepia a la plancha",
+            "price": 1395
+          },
+          {
+            "name": "Calamares a la andaluza",
+            "price": 1150
+          },
+          {
+            "name": "Rejos",
+            "price": 1150
+          },
+          {
+            "name": "Bienmesabe cazón",
+            "price": 1150
+          },
+          {
+            "name": "Chopitos",
+            "price": 1155
+          },
+          {
+            "name": "Gambón a la plancha",
+            "price": 1450
+          },
+          {
+            "name": "Gulas al ajillo",
+            "price": 895
+          },
+          {
+            "name": "Gulas al ajillo con gambas",
+            "price": 995
+          },
+          {
+            "name": "Gambas al ajillo",
+            "price": 1050
+          },
+          {
+            "name": "Familia de mariscos",
+            "description": "rejos, chopitos, cazón, calamares, boquerones",
+            "price": 1595
+          }
+        ]
+      },
+      {
+        "title": "Variados",
+        "items": [
+          {
+            "name": "Gyozas",
+            "description": "8 unidades",
+            "price": 850
+          },
+          {
+            "name": "Mini rollitos",
+            "description": "8 unidades",
+            "price": 550
+          },
+          {
+            "name": "Alitas de pollo",
+            "price": 895
+          },
+          {
+            "name": "Chorizos a la sidra",
+            "price": 895
+          },
+          {
+            "name": "Oreja a la plancha",
+            "price": 995
+          },
+          {
+            "name": "Tiras de pollo",
+            "price": 895
+          },
+          {
+            "name": "Lacón a la gallega",
+            "price": 1050
+          },
+          {
+            "name": "Croquetas de jamón",
+            "price": 950
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tostas-y-sandwiches",
+    "title": "Tostas y sándwiches",
+    "alt": "Carta de tostas y sándwiches de Bar Plaza en Pinto",
+    "groups": [
+      {
+        "title": "Tostas",
+        "items": [
+          {
+            "name": "Tosta del mar",
+            "description": "gulas y gambas acompañadas",
+            "price": 595
+          },
+          {
+            "name": "Atún con pimientos",
+            "price": 495
+          },
+          {
+            "name": "Anchoas y boquerones",
+            "price": 595
+          },
+          {
+            "name": "Queso brie con cebolla caramelizada",
+            "price": 495
+          },
+          {
+            "name": "Jamón con tumaca",
+            "price": 495
+          },
+          {
+            "name": "Tosta de queso de cabra",
+            "description": "con confitura de fresa y cebolla caramelizada",
+            "price": 595
+          },
+          {
+            "name": "Cuatro quesos con bacon a la plancha",
+            "price": 495
+          },
+          {
+            "name": "Tosta de solomillo de cerdo",
+            "description": "con queso brie y cebolla caramelizada",
+            "price": 695
+          }
+        ]
+      },
+      {
+        "title": "SANDWICHES",
+        "items": [
+          {
+            "name": "Sandwich mixto",
+            "description": "jamón york, queso",
+            "price": 410
+          },
+          {
+            "name": "Sandwich vegetal",
+            "description": "lechuga, tomate, atún, huevo, mayonesa",
+            "price": 480
+          },
+          {
+            "name": "Sandwich Inglés",
+            "description": "jamón york, queso, bacon, huevo frito",
+            "price": 580
+          },
+          {
+            "name": "Pechuga de pollo",
+            "description": "pechuga de pollo, lechuga, tomate, queso",
+            "price": 655
+          },
+          {
+            "name": "Sandwich plaza",
+            "description": "jamón york, queso, lechuga, tomate, pechuga de pollo empanado, bacon",
+            "price": 855
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ensaladas-y-platos",
+    "title": "Ensaladas y platos",
+    "alt": "Carta de ensaladas y platos de Bar Plaza en Pinto",
+    "groups": [
+      {
+        "title": "Ensaladas",
+        "items": [
+          {
+            "name": "Ensalada mixta",
+            "description": "lechuga, tomate, cebolla, huevo, espárragos, atún",
+            "price": 795
+          },
+          {
+            "name": "Ensalada César",
+            "description": "lechuga, tomate, bacon, pollo y salsa César",
+            "price": 850
+          },
+          {
+            "name": "Ensalada de la casa",
+            "description": "lechuga, tomate, cebolla caramelizada, huevo, espárragos, atún, aceitunas y maíz",
+            "price": 895
+          }
+        ]
+      },
+      {
+        "title": "PLATOS COMBINADOS",
+        "items": [
+          {
+            "name": "Milanesa de pollo",
+            "description": "acompañado de ensalada, huevo frito y patatas",
+            "price": 950
+          },
+          {
+            "name": "Filete de pollo",
+            "description": "acompañado de ensalada, huevo frito y patatas",
+            "price": 895
+          },
+          {
+            "name": "Milanesa de ternera",
+            "description": "acompañado de ensalada, huevo frito y patatas",
+            "price": 995
+          },
+          {
+            "name": "Filete de ternera",
+            "description": "acompañado de ensalada y patatas",
+            "price": 950
+          },
+          {
+            "name": "Bienmesabe cazón",
+            "description": "acompañado de ensalada y patatas",
+            "price": 895
+          },
+          {
+            "name": "Calamares a la andaluza",
+            "description": "acompañado de ensalada y patatas",
+            "price": 950
+          },
+          {
+            "name": "Entrecot de buey",
+            "description": "acompañado de ensalada, huevo frito y patatas",
+            "price": 1650
+          },
+          {
+            "name": "Churrasco de ternera",
+            "description": "acompañado de ensalada, huevo frito y patatas",
+            "price": 1350
+          },
+          {
+            "name": "Cinta de lomo",
+            "description": "acompañado de ensalada, huevo frito y patatas",
+            "price": 950
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hamburguesas",
+    "title": "Hamburguesas",
+    "alt": "Carta de hamburguesas de Bar Plaza en Pinto",
+    "groups": [
+      {
+        "title": "Hamburguesas",
+        "items": [
+          {
+            "name": "Hamburguesa A",
+            "description": "carne, lechuga, tomate y patatas",
+            "price": 480
+          },
+          {
+            "name": "Hamburguesa B",
+            "description": "carne, lechuga, tomate, queso cheddar, bacon y patatas",
+            "price": 625
+          },
+          {
+            "name": "Hamburguesa C",
+            "description": "carne, lechuga, tomate, queso cheddar, bacon, huevo y patatas",
+            "price": 725
+          },
+          {
+            "name": "Hamburguesa de pollo",
+            "description": "pollo empanado, lechuga, tomate y patatas",
+            "price": 650
+          },
+          {
+            "name": "Hamburguesa de pollo especial",
+            "description": "pollo empanado, lechuga, tomate, bacon, queso y patatas",
+            "price": 780
+          },
+          {
+            "name": "Hamburguesa D",
+            "description": "doble carne, doble de bacon, doble queso, jamón york, huevo",
+            "price": 1150
+          },
+          {
+            "name": "Hamburguesa de buey",
+            "description": "carne de buey, lechuga, tomate, queso cheddar y doble bacon",
+            "price": 1150
+          },
+          {
+            "name": "Hamburguesa de queso cabra",
+            "description": "carne de buey, lechuga, tomate, queso de cabra, cebolla caramelizada",
+            "price": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bocadillos-y-postres",
+    "title": "Bocadillos y postres",
+    "alt": "Carta de bocadillos y postres de Bar Plaza en Pinto",
+    "groups": [
+      {
+        "title": "Bocadillos",
+        "items": [
+          {
+            "name": "Oreja",
+            "price": 600,
+            "montadoPrice": 380
+          },
+          {
+            "name": "Calamares",
+            "price": 600,
+            "montadoPrice": 380
+          },
+          {
+            "name": "Jamón con tumaca",
+            "price": 550,
+            "montadoPrice": 350
+          },
+          {
+            "name": "Pollo con mayonesa",
+            "price": 600,
+            "montadoPrice": 380
+          },
+          {
+            "name": "Lomo",
+            "price": 550,
+            "montadoPrice": 350
+          },
+          {
+            "name": "Bacon",
+            "price": 550,
+            "montadoPrice": 350
+          },
+          {
+            "name": "Panceta",
+            "price": 650,
+            "montadoPrice": 430
+          },
+          {
+            "name": "Tortilla de patata",
+            "price": 550,
+            "montadoPrice": 350
+          },
+          {
+            "name": "Tortilla francesa",
+            "price": 550,
+            "montadoPrice": 350
+          },
+          {
+            "name": "Boquerones en vinagre",
+            "price": 650,
+            "montadoPrice": 430
+          }
+        ]
+      },
+      {
+        "title": "Suplementos",
+        "items": [
+          {
+            "name": "Queso",
+            "price": 50
+          },
+          {
+            "name": "Pimiento",
+            "price": 50
+          },
+          {
+            "name": "Tomate",
+            "price": 50
+          },
+          {
+            "name": "Lechuga",
+            "price": 50
+          }
+        ]
+      },
+      {
+        "title": "POSTRES",
+        "items": [
+          {
+            "name": "Tarta de queso",
+            "price": 450
+          },
+          {
+            "name": "Brownie de chocolate",
+            "price": 350
+          },
+          {
+            "name": "Bolas de helado",
+            "price": 250
+          },
+          {
+            "name": "Profiteroles",
+            "price": 280
+          }
+        ]
+      }
+    ]
+  }
+]

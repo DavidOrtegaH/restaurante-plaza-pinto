@@ -4,12 +4,15 @@ Purpose:
   Let visitors inspect a menu page at a larger size.
 
 Owns:
-  ./menu.js
+  ./menu.ts
 
 Must:
-  Menu buttons open the native dialog with the selected image and an informative accessible name.
+  Unmodified primary activation of a menu link opens the native dialog with the selected image and an informative accessible name.
   The close button, Escape key, and clicking the backdrop dismiss the dialog.
   Image URLs are taken only from the page's local menu data.
+  Loading and image failures are announced and the matching text menu remains accessible.
+  Browser zoom gestures retain their native behavior.
+  Closing the dialog restores focus to the link that opened it.
 
 Done when:
   Menu interaction uses native dialog methods and does not inject markup from user-controlled strings.

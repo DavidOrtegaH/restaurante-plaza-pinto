@@ -10,7 +10,9 @@ Must:
   The page uses one main landmark, a logical heading order, and named navigation landmarks.
   Every meaningful image has descriptive alternative text.
   Menu pages can be opened and dismissed with native keyboard-accessible dialog behavior.
-  Phone and address are actionable contact information.
+  The address links to the confirmed map location and the telephone is readable, selectable plain text.
+  Menu links have an image fallback without JavaScript and use stable category IDs to open the corresponding text menu.
+  The first visible menu image loads immediately; thumbnails use responsive optimized sources.
   Unconfirmed opening hours are not stated as fact.
 
 Must not:
