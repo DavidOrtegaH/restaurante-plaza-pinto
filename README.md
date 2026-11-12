@@ -2,6 +2,21 @@
 
 Página web de presentación para Bar Plaza, una bar cafetería en Pinto (Comunidad de Madrid). Incluye la carta en imágenes, su transcripción accesible, datos de contacto, Google Maps y pedidos mediante Uber Eats.
 
+## Aprendizajes y dificultades
+
+Este proyecto me ha permitido aplicar lo aprendido en el Grado Superior de Desarrollo de Aplicaciones Web a una necesidad real: presentar la carta y los datos de contacto de un restaurante. He aprendido a tomar decisiones técnicas según el alcance, el presupuesto y las personas que van a utilizar la página, y a llevar el trabajo desde los requisitos hasta su publicación.
+
+- **Elegir una arquitectura adecuada.** La página necesitaba mostrar información y permitir consultar la carta, sin cuentas de usuario ni datos que requirieran un servidor. Con Astro y una salida estática he podido simplificar el mantenimiento y desplegar el proyecto en un alojamiento gratuito.
+- **Preparar una carta legible.** Las fotografías originales tenían sombras, perspectivas y elementos ajenos al papel. Conseguir imágenes limpias, con el mismo formato y sin franjas, exigió revisar su encuadre y sus proporciones. Separar los archivos fuente de las imágenes optimizadas para la web permitió conservar la calidad de lectura y reducir el peso de las miniaturas.
+- **Organizar y comprobar el contenido.** Mantener los nombres, ingredientes y precios de la carta sin introducir diferencias fue una dificultad importante. Centralicé la transcripción en datos estructurados, con identificadores estables y precios en céntimos, y añadí comprobaciones para detectar pérdidas de información o valores incorrectos.
+- **Resolver el comportamiento del visor.** La ampliación de las cartas debía funcionar con teclado y convivir con el zoom del navegador. Ajusté el tamaño de las imágenes y los controles del diálogo, la devolución del foco al cerrarlo y la alternativa en texto cuando una imagen no puede cargarse.
+- **Incorporar accesibilidad desde la interfaz.** Revisé la estructura semántica de HTML, los textos alternativos, el contraste, el tamaño de los controles y el foco visible. Las pruebas en pantallas estrechas y las comprobaciones automáticas me ayudaron a detectar problemas que no se apreciaban al revisar únicamente la versión de escritorio.
+- **Aplicar seguridad en una web estática.** Aprendí que prescindir de un servidor propio no elimina la necesidad de proteger la página. Configuré cabeceras de seguridad y una política de contenido restrictiva, adapté los scripts para que funcionaran con ella y revisé las dependencias y los archivos publicados para evitar exponer credenciales o material de desarrollo.
+- **Preparar el SEO para el entorno real.** La URL definitiva no estaba disponible al principio. Configuré los metadatos, el canonical, los datos estructurados, el sitemap y las reglas de indexación a partir de la dirección de producción, evitando que las versiones de prueba se indexaran por error.
+- **Trabajar con un proceso de entrega.** Utilicé especificaciones junto al código para mantener claros los requisitos, ramas de Git para organizar el desarrollo y Conventional Commits para describir los cambios. Automatizar las comprobaciones en GitHub y verificar después el sitio publicado me permitió distinguir entre una compilación correcta y una entrega que funciona en producción.
+
+La principal lección ha sido que entregar una web implica mucho más que conseguir que se vea bien: también hay que cuidar el contenido, la accesibilidad, el rendimiento, la seguridad y la facilidad para mantenerla.
+
 ## Stack
 
 - [Astro](https://astro.build/) para generar una web estática rápida, sin servidor ni base de datos.
