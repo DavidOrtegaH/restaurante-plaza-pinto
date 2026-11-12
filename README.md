@@ -1,6 +1,6 @@
 # Bar Plaza · Pinto
 
-Página web de presentación para Bar Plaza, una bar cafetería en Pinto (Comunidad de Madrid). Incluye la carta recreada digitalmente, su transcripción accesible, datos de contacto, Google Maps y pedidos mediante Uber Eats.
+Página web de presentación para Bar Plaza, una bar cafetería en Pinto (Comunidad de Madrid). Incluye la carta en imágenes, su transcripción accesible, datos de contacto, Google Maps y pedidos mediante Uber Eats.
 
 ## Stack
 
