@@ -5,7 +5,6 @@
   --ink: #283b2c;
   --ink-deep: #1e2d22;
   --olive: #596c45;
-  --menu-border: #6d8c13;
   --orange: #dc7b3f;
   --muted: #707568;
   --line: rgba(40, 59, 44, .18);
@@ -25,14 +24,16 @@ img { display: block; max-width: 100%; }
 .skip-link { position: fixed; z-index: 20; top: 12px; left: 12px; padding: 12px 16px; transform: translateY(-160%); background: var(--ink); color: var(--paper); }
 .skip-link:focus { transform: translateY(0); }
 
-.site-header { height: 86px; padding: 0 clamp(22px, 6vw, 96px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.site-header { height: 86px; padding: 0 clamp(22px, 6vw, 96px); display: flex; align-items: center; justify-content: space-between; background: var(--ink-deep); color: var(--paper); }
+.site-header .brand__mark { border-color: currentColor; }
+.site-header .brand:focus-visible { outline-color: var(--paper); }
 .brand { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 190px; }
 .brand__mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; font: 600 21px var(--serif); }
 .brand__name { font-size: 12px; letter-spacing: .15em; }
 .brand__name strong { font-weight: 700; }
-.main-nav { display: flex; align-items: stretch; align-self: stretch; gap: 12px; background: var(--menu-border); font-size: 16px; font-weight: 700; }
-.main-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 18px; border: 1px solid var(--ink); background: var(--paper-deep); text-decoration: underline; text-underline-offset: 4px; }
-.main-nav a:hover, .main-nav a:focus-visible { background: var(--ink); color: var(--paper); }
+.main-nav { display: flex; align-items: stretch; align-self: stretch; gap: 12px; font-size: 16px; font-weight: 700; }
+.main-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 18px; text-decoration: underline; text-underline-offset: 4px; }
+.main-nav a:hover, .main-nav a:focus-visible { background: var(--ink); color: var(--paper); text-decoration-thickness: 2px; }
 .main-nav a:focus-visible { outline: 3px solid var(--paper); outline-offset: -6px; }
 .main-nav a, .header-phone, .text-link, .back-top { transition: color .2s ease; }
 .text-link:hover, .back-top:hover { color: #8b411c; }
