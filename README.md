@@ -1,6 +1,6 @@
 # Bar Plaza · Pinto
 
-Página web de presentación para Bar Plaza, una bar cafetería en Pinto (Comunidad de Madrid). Muestra la carta a partir de las fotografías facilitadas, y ofrece acceso rápido al teléfono y a la dirección.
+Página web de presentación para Bar Plaza, una bar cafetería en Pinto (Comunidad de Madrid). Incluye la carta recreada digitalmente, su transcripción accesible, datos de contacto, Google Maps y pedidos mediante Uber Eats.
 
 ## Stack
 
@@ -43,10 +43,17 @@ El plan Free admite proyectos comerciales con un límite mensual de créditos; a
 ## Contenido y fotos
 
 - El teléfono y la dirección se han tomado de la portada fotografiada de la carta: `91 941 46 66` y `Calle Joan Miró, 5, 28320 Pinto, Madrid`.
-- Las páginas de la carta de `public/images/menu/` son copias preparadas para web de las fotografías proporcionadas. Se corrigió su orientación y se ajustaron ligeramente el brillo y el contraste para facilitar la lectura. Las fotografías fuente se conservan en `assets/menu-originals/`.
+- Las cinco páginas PNG de `public/images/menu/` se han recreado mediante IA a partir de las fotografías proporcionadas, manteniendo nombres, ingredientes, precios y el estilo de la carta física. Las imágenes de comida son ilustrativas. La transcripción y las instrucciones de generación se conservan en `public/images/menu/transcription.json`; las fotografías fuente, en `assets/menu-originals/`.
 - Las fotografías y el contenido de la carta mantienen los derechos de sus titulares. Confirma con el restaurante que tienes permiso para publicarlos en el sitio y en el repositorio público.
 - Las imágenes disponibles son de la carta, no del interior o la fachada del bar. No se han incorporado fotos de directorios de terceros porque no se pudo confirmar su fecha de captura y su permiso de reutilización. Se pueden añadir fotos propias recientes del local cuando estén disponibles.
-- El horario no aparece confirmado en el material disponible, así que la web invita a consultarlo por teléfono.
+- La carta puede ampliarse con controles de zoom y consultarse como texto desplegable mediante teclado o lector de pantalla.
+- La dirección enlaza a Google Maps y el botón de pedidos abre la ficha del restaurante en Uber Eats. El teléfono se presenta como texto y no se publican horarios sin confirmar.
+
+## Publicación del repositorio
+
+La rama de producción es `main`, la de integración es `develop` y el desarrollo se realiza en `features`. Los mensajes siguen Conventional Commits en inglés.
+
+Los archivos de entorno, dependencias, resultados de compilación, cachés, claves privadas y duplicados locales de `pictures/` se excluyen mediante `.gitignore`. Antes de publicar cambios, revisa los archivos preparados y el historial para evitar incluir credenciales o datos privados. El repositorio no requiere secretos para compilar.
 
 ## Licencia
 
