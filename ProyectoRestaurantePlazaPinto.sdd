@@ -22,6 +22,7 @@ Must:
   Menu images remain attributed to their rights holders and are excluded from the project code license.
   Locally available content works without paid services or third-party runtime dependencies.
   User-facing pages use Spanish-language semantic HTML and support keyboard access.
+  The homepage declares the Bar Plaza favicon at stable public SVG and 96x96 PNG URLs, available to crawlers.
 
 Must not:
   Publish unverified business hours or third-party restaurant photos without confirmed reuse rights and a recent date.

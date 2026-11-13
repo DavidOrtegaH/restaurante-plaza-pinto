@@ -63,7 +63,8 @@ const serializedData = JSON.stringify(structuredData).replaceAll('<', '\\u003c')
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <script type="application/ld+json" is:inline set:html={serializedData} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
     <title>{title}</title>
   </head>
   <body>
